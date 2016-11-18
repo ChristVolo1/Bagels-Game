@@ -30,15 +30,15 @@ function startGame() {
     //matchGuess();
 
     function compareUsVsComp() {
-        var return response = '';
+
         if (guessDigit1 == computerChoice1) return "pico";
         else if (guessDigit1 == computerChoice2 || guessDigit1 == computerChoice3) return "fermi";
 
-        if (guessDigit2 == computerChoice2) return += "pico";
-        else if (guessDigit2 == computerChoice1 || guessDigit2 == computerChoice3) return += "fermi";
+        if (guessDigit2 == computerChoice2) return "pico";
+        else if (guessDigit2 == computerChoice1 || guessDigit2 == computerChoice3) return "fermi";
 
-        if (guessDigit3 == computerChoice3) return += "pico";
-        else if (guessDigit3 == computerChoice1 || guessDigit3 == computerChoice2) return += "fermi";
+        if (guessDigit3 == computerChoice3) return "pico";
+        else if (guessDigit3 == computerChoice1 || guessDigit3 == computerChoice2) return "fermi";
 
         if(guessDigit1 != computerChoice1 && guessDigit2 != computerChoice2 && guessDigit3 != computerChoice3) response = "bagels";
 
@@ -46,6 +46,6 @@ function startGame() {
     }
 
 
-startGame();
+startGame(); 
 var computerNumbers = [computerChoice1, computerChoice2, computerChoice3];
 alert(computerNumbers);
