@@ -14,38 +14,37 @@ function startGame() {
     //choose 3 unique numbers
     computerChoice1 = getRandomNumber();
     do {
-        computerChoice1 = getRandomNumber();
         computerChoice2 = getRandomNumber();
         computerChoice3 = getRandomNumber();
     } while (computerChoice1 === computerChoice2 || computerChoice1 === computerChoice3 || computerChoice2 === computerChoice3);
+}
 
-    function getUserGuess() {
-        guessDigit1 = document.getElementById("guess1").value;
-        guessDigit2 = document.getElementById("guess2").value;
-        guessDigit3 = document.getElementById("guess3").value;
-    }
+function compareUsVsComp() {
+    var response = "";
+    if (guessDigit1 == computerChoice1) response = "pico ";
+    else if (guessDigit1 == computerChoice2 || guessDigit1 == computerChoice3) response = "fermi ";
 
-    //document.getElementById("guessButton").addEventListener("click", function);
-    //getUserGuess();
-    //matchGuess();
+    if (guessDigit2 == computerChoice2) response += "pico ";
+    else if (guessDigit2 == computerChoice1 || guessDigit2 == computerChoice3) response += "fermi ";
 
-    function compareUsVsComp() {
+    if (guessDigit3 == computerChoice3) response += "pico ";
+    else if (guessDigit3 == computerChoice1 || guessDigit3 == computerChoice2) response += "fermi ";
 
-        if (guessDigit1 == computerChoice1) return "pico";
-        else if (guessDigit1 == computerChoice2 || guessDigit1 == computerChoice3) return "fermi";
+    else if (response == "") return ("bagels");
 
-        if (guessDigit2 == computerChoice2) return "pico";
-        else if (guessDigit2 == computerChoice1 || guessDigit2 == computerChoice3) return "fermi";
-
-        if (guessDigit3 == computerChoice3) return "pico";
-        else if (guessDigit3 == computerChoice1 || guessDigit3 == computerChoice2) return "fermi";
-
-        if(guessDigit1 != computerChoice1 && guessDigit2 != computerChoice2 && guessDigit3 != computerChoice3) response = "bagels";
-
-        return response;
-    }
+    return response;
+    console.log(response);
+}
 
 
-startGame(); 
+
+document.getElementById("guessButton").addEventListener("click", function() {
+    guessDigit1 = document.getElementById("guessDigit1").value;
+    guessDigit2 = document.getElementById("guessDigit2").value;
+    guessDigit3 = document.getElementById("guessDigit3").value;
+compareUsVsComp();
+});
+
+startGame();
 var computerNumbers = [computerChoice1, computerChoice2, computerChoice3];
 alert(computerNumbers);
