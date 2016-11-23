@@ -11,9 +11,9 @@ function getRandomNumber() {
 }
 
 function startGame() {
-    //choose 3 unique numbers
-    computerChoice1 = getRandomNumber();
+    //choose 3 unique numbers    
     do {
+        computerChoice1 = getRandomNumber();
         computerChoice2 = getRandomNumber();
         computerChoice3 = getRandomNumber();
     } while (computerChoice1 === computerChoice2 || computerChoice1 === computerChoice3 || computerChoice2 === computerChoice3);
